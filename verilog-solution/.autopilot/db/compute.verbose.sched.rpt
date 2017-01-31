@@ -1,0 +1,1446 @@
+
+
+================================================================
+== Vivado HLS Report for 'compute'
+================================================================
+* Date:           Mon Jan 30 22:57:56 2017
+
+* Version:        2016.3 (Build 1682563 on Mon Oct 10 19:41:59 MDT 2016)
+* Project:        FPGAs-for-Accelerating-the-Phylogenetic-Likelihood-Function
+* Solution:       verilog-solution
+* Product family: kintex7
+* Target device:  xc7k160tfbg484-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      9.18|        0.12|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-----------------+-----+-----+----------+-----------+-----------+-------+----------+
+        |                 |  Latency  | Iteration|  Initiation Interval  |  Trip |          |
+        |    Loop Name    | min | max |  Latency |  achieved |   target  | Count | Pipelined|
+        +-----------------+-----+-----+----------+-----------+-----------+-------+----------+
+        |- Loop 1         |    ?|    ?|         ?|          -|          -|      ?|    no    |
+        | + Loop 1.1      |    ?|    ?|         1|          -|          -|      ?|    no    |
+        |- Loop 2         |    ?|    ?|         ?|          -|          -|      ?|    no    |
+        | + Loop 2.1      |    1|    ?|         1|          -|          -| 1 ~ ? |    no    |
+        | + Loop 2.2      |    ?|    ?|         ?|          -|          -|      ?|    no    |
+        |  ++ Loop 2.2.1  |    ?|    ?|        23|          -|          -|      ?|    no    |
+        +-----------------+-----+-----+----------+-----------+-----------+-------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 29
+* Pipeline: 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	3  / (!exitcond1)
+	2  / (exitcond1 & tmp_i)
+	4  / (exitcond1 & !tmp_i)
+4 --> 
+	5  / (tmp)
+5 --> 
+	5  / (!exitcond)
+	6  / (exitcond)
+6 --> 
+	7  / (!tmp_3)
+	4  / (tmp_3)
+7 --> 
+	8  / (tmp_6)
+	6  / (!tmp_6)
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	14  / true
+14 --> 
+	15  / true
+15 --> 
+	16  / true
+16 --> 
+	17  / true
+17 --> 
+	18  / true
+18 --> 
+	19  / true
+19 --> 
+	20  / true
+20 --> 
+	21  / true
+21 --> 
+	22  / true
+22 --> 
+	23  / true
+23 --> 
+	24  / true
+24 --> 
+	25  / true
+25 --> 
+	26  / true
+26 --> 
+	27  / true
+27 --> 
+	28  / true
+28 --> 
+	29  / true
+29 --> 
+	7  / true
+* FSM state operations: 
+
+ <State 1>: 0.89ns
+ST_1: StgValue_30 (7)  [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_SpecBitsMap(i32 %size) nounwind, !map !1229
+
+ST_1: StgValue_31 (8)  [1/1] 0.00ns
+:1  call void (...)* @_ssdm_op_SpecBitsMap(i32 %length_r) nounwind, !map !1235
+
+ST_1: StgValue_32 (9)  [1/1] 0.00ns
+:2  call void (...)* @_ssdm_op_SpecBitsMap([75 x double]* %dataa) nounwind, !map !1239
+
+ST_1: StgValue_33 (10)  [1/1] 0.00ns
+:3  call void (...)* @_ssdm_op_SpecBitsMap([75 x double]* %datac) nounwind, !map !1246
+
+ST_1: StgValue_34 (11)  [1/1] 0.00ns
+:4  call void (...)* @_ssdm_op_SpecBitsMap([75 x double]* %datag) nounwind, !map !1250
+
+ST_1: StgValue_35 (12)  [1/1] 0.00ns
+:5  call void (...)* @_ssdm_op_SpecBitsMap([75 x double]* %datat) nounwind, !map !1254
+
+ST_1: StgValue_36 (13)  [1/1] 0.00ns
+:6  call void (...)* @_ssdm_op_SpecBitsMap(double 0.000000e+00) nounwind, !map !1258
+
+ST_1: StgValue_37 (14)  [1/1] 0.00ns
+:7  call void (...)* @_ssdm_op_SpecTopModule([8 x i8]* @compute_str) nounwind
+
+ST_1: length_read (15)  [1/1] 0.00ns
+:8  %length_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %length_r) nounwind
+
+ST_1: size_read (16)  [1/1] 0.00ns
+:9  %size_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %size) nounwind
+
+ST_1: StgValue_40 (17)  [1/1] 0.89ns  loc: testproject/fun.h:65->testproject/fun.h:92
+:10  br label %1
+
+
+ <State 2>: 1.60ns
+ST_2: index_assign (19)  [1/1] 0.00ns
+:0  %index_assign = phi i32 [ %i_1, %4 ], [ 0, %0 ]
+
+ST_2: indvars_iv (20)  [1/1] 0.00ns  loc: testproject/fun.h:65->testproject/fun.h:92
+:1  %indvars_iv = phi i32 [ %indvars_iv_next, %4 ], [ -1, %0 ]
+
+ST_2: i_1 (21)  [1/1] 1.60ns  loc: testproject/fun.h:65->testproject/fun.h:92
+:2  %i_1 = add i32 %index_assign, 1
+
+ST_2: StgValue_44 (22)  [1/1] 0.89ns  loc: testproject/fun.h:76->testproject/fun.h:66->testproject/fun.h:92
+:3  br label %2
+
+
+ <State 3>: 1.60ns
+ST_3: i_i_i (24)  [1/1] 0.00ns
+:0  %i_i_i = phi i32 [ 0, %1 ], [ %i, %3 ]
+
+ST_3: deSize (25)  [1/1] 0.00ns
+:1  %deSize = phi i32 [ 1, %1 ], [ %result, %3 ]
+
+ST_3: exitcond1 (26)  [1/1] 1.50ns  loc: testproject/fun.h:76->testproject/fun.h:66->testproject/fun.h:92
+:2  %exitcond1 = icmp eq i32 %i_i_i, %index_assign
+
+ST_3: i (27)  [1/1] 1.60ns  loc: testproject/fun.h:76->testproject/fun.h:66->testproject/fun.h:92
+:3  %i = add nsw i32 %i_i_i, 1
+
+ST_3: StgValue_49 (28)  [1/1] 0.00ns  loc: testproject/fun.h:76->testproject/fun.h:66->testproject/fun.h:92
+:4  br i1 %exitcond1, label %mypower.exit.i, label %3
+
+ST_3: result (30)  [1/1] 0.00ns  loc: testproject/fun.h:77->testproject/fun.h:66->testproject/fun.h:92
+:0  %result = shl i32 %deSize, 1
+
+ST_3: StgValue_51 (31)  [1/1] 0.00ns  loc: testproject/fun.h:76->testproject/fun.h:66->testproject/fun.h:92
+:1  br label %2
+
+ST_3: tmp_i (33)  [1/1] 1.50ns  loc: testproject/fun.h:67->testproject/fun.h:92
+mypower.exit.i:0  %tmp_i = icmp slt i32 %deSize, %size_read
+
+ST_3: StgValue_53 (34)  [1/1] 0.00ns  loc: testproject/fun.h:67->testproject/fun.h:92
+mypower.exit.i:1  br i1 %tmp_i, label %4, label %countHeight.exit.preheader
+
+ST_3: indvars_iv_next (36)  [1/1] 1.60ns  loc: testproject/fun.h:65->testproject/fun.h:92
+:0  %indvars_iv_next = add i32 %indvars_iv, 1
+
+ST_3: StgValue_55 (37)  [1/1] 0.00ns  loc: testproject/fun.h:65->testproject/fun.h:92
+:1  br label %1
+
+ST_3: StgValue_56 (39)  [1/1] 0.89ns  loc: testproject/fun.h:95
+countHeight.exit.preheader:0  br label %countHeight.exit
+
+
+ <State 4>: 3.10ns
+ST_4: indvars_iv2 (41)  [1/1] 0.00ns  loc: testproject/fun.h:65->testproject/fun.h:92
+countHeight.exit:0  %indvars_iv2 = phi i32 [ %indvars_iv_next2, %countHeight.exit.loopexit ], [ %indvars_iv, %countHeight.exit.preheader ]
+
+ST_4: k1_in (42)  [1/1] 0.00ns
+countHeight.exit:1  %k1_in = phi i32 [ %k, %countHeight.exit.loopexit ], [ %index_assign, %countHeight.exit.preheader ]
+
+ST_4: k (43)  [1/1] 1.60ns  loc: testproject/fun.h:95
+countHeight.exit:2  %k = add nsw i32 %k1_in, -1
+
+ST_4: tmp (44)  [1/1] 1.50ns  loc: testproject/fun.h:96
+countHeight.exit:3  %tmp = icmp sgt i32 %k, 0
+
+ST_4: StgValue_61 (45)  [1/1] 0.00ns  loc: testproject/fun.h:96
+countHeight.exit:4  br i1 %tmp, label %.preheader39.preheader, label %.preheader.preheader_ifconv
+
+ST_4: StgValue_62 (47)  [1/1] 0.89ns
+.preheader39.preheader:0  br label %.preheader39
+
+ST_4: StgValue_63 (189)  [1/1] 0.00ns  loc: testproject/fun.h:174
+.preheader.preheader_ifconv:0  ret double undef
+
+
+ <State 5>: 2.49ns
+ST_5: i_i (49)  [1/1] 0.00ns
+.preheader39:0  %i_i = phi i32 [ %i_2, %5 ], [ 0, %.preheader39.preheader ]
+
+ST_5: right_2 (50)  [1/1] 0.00ns
+.preheader39:1  %right_2 = phi i32 [ %result_1, %5 ], [ 1, %.preheader39.preheader ]
+
+ST_5: empty (51)  [1/1] 0.00ns
+.preheader39:2  %empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1, i64 -1, i64 0) nounwind
+
+ST_5: exitcond (52)  [1/1] 1.50ns  loc: testproject/fun.h:76->testproject/fun.h:97
+.preheader39:3  %exitcond = icmp eq i32 %i_i, %indvars_iv2
+
+ST_5: i_2 (53)  [1/1] 1.60ns  loc: testproject/fun.h:76->testproject/fun.h:97
+.preheader39:4  %i_2 = add nsw i32 %i_i, 1
+
+ST_5: StgValue_69 (54)  [1/1] 0.00ns  loc: testproject/fun.h:76->testproject/fun.h:97
+.preheader39:5  br i1 %exitcond, label %mypower.exit, label %5
+
+ST_5: result_1 (56)  [1/1] 0.00ns  loc: testproject/fun.h:77->testproject/fun.h:97
+:0  %result_1 = shl i32 %right_2, 1
+
+ST_5: StgValue_71 (57)  [1/1] 0.00ns  loc: testproject/fun.h:76->testproject/fun.h:97
+:1  br label %.preheader39
+
+ST_5: left (59)  [1/1] 1.60ns  loc: testproject/fun.h:97
+mypower.exit:0  %left = add nsw i32 %right_2, -1
+
+ST_5: StgValue_73 (60)  [1/1] 0.89ns  loc: testproject/fun.h:100
+mypower.exit:1  br label %6
+
+
+ <State 6>: 5.15ns
+ST_6: left1 (62)  [1/1] 0.00ns
+:0  %left1 = phi i32 [ %left, %mypower.exit ], [ %left_1, %8 ]
+
+ST_6: right1 (63)  [1/1] 0.00ns
+:1  %right1 = phi i32 [ %right_2, %mypower.exit ], [ %right, %8 ]
+
+ST_6: leaves1 (64)  [1/1] 0.00ns
+:2  %leaves1 = phi i32 [ %right_2, %mypower.exit ], [ %leaves_1, %8 ]
+
+ST_6: tmp_3 (65)  [1/1] 0.00ns  loc: testproject/fun.h:100
+:3  %tmp_3 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %leaves1, i32 31)
+
+ST_6: StgValue_78 (66)  [1/1] 0.00ns  loc: testproject/fun.h:100
+:4  br i1 %tmp_3, label %countHeight.exit.loopexit, label %.preheader1.preheader
+
+ST_6: tmp_8 (68)  [1/1] 0.00ns  loc: testproject/fun.h:97
+.preheader1.preheader:0  %tmp_8 = trunc i32 %left1 to i8
+
+ST_6: tmp_9 (69)  [1/1] 0.00ns  loc: testproject/fun.h:97
+.preheader1.preheader:1  %tmp_9 = trunc i32 %left1 to i6
+
+ST_6: p_shl2_cast (70)  [1/1] 0.00ns  loc: testproject/fun.h:104
+.preheader1.preheader:2  %p_shl2_cast = call i8 @_ssdm_op_BitConcatenate.i8.i6.i2(i6 %tmp_9, i2 0)
+
+ST_6: tmp_1 (71)  [1/1] 1.24ns  loc: testproject/fun.h:104
+.preheader1.preheader:3  %tmp_1 = add i8 %p_shl2_cast, %tmp_8
+
+ST_6: tmp_50 (72)  [1/1] 0.00ns  loc: testproject/fun.h:77->testproject/fun.h:97
+.preheader1.preheader:4  %tmp_50 = trunc i32 %right1 to i8
+
+ST_6: tmp_51 (73)  [1/1] 0.00ns  loc: testproject/fun.h:77->testproject/fun.h:97
+.preheader1.preheader:5  %tmp_51 = trunc i32 %right1 to i6
+
+ST_6: p_shl1_cast (74)  [1/1] 0.00ns  loc: testproject/fun.h:113
+.preheader1.preheader:6  %p_shl1_cast = call i8 @_ssdm_op_BitConcatenate.i8.i6.i2(i6 %tmp_51, i2 0)
+
+ST_6: tmp_2 (75)  [1/1] 1.24ns  loc: testproject/fun.h:113
+.preheader1.preheader:7  %tmp_2 = add i8 %p_shl1_cast, %tmp_50
+
+ST_6: tmp_52 (76)  [1/1] 0.00ns  loc: testproject/fun.h:120
+.preheader1.preheader:8  %tmp_52 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %left1, i32 31)
+
+ST_6: p_neg (77)  [1/1] 1.60ns  loc: testproject/fun.h:120
+.preheader1.preheader:9  %p_neg = sub i32 0, %left1
+
+ST_6: p_lshr (78)  [1/1] 0.00ns  loc: testproject/fun.h:120
+.preheader1.preheader:10  %p_lshr = call i31 @_ssdm_op_PartSelect.i31.i32.i32.i32(i32 %p_neg, i32 1, i32 31)
+
+ST_6: tmp_53 (79)  [1/1] 0.00ns  loc: testproject/fun.h:120
+.preheader1.preheader:11  %tmp_53 = zext i31 %p_lshr to i32
+
+ST_6: p_neg_t (80)  [1/1] 1.60ns  loc: testproject/fun.h:120
+.preheader1.preheader:12  %p_neg_t = sub i32 0, %tmp_53
+
+ST_6: p_lshr_f (81)  [1/1] 0.00ns  loc: testproject/fun.h:120
+.preheader1.preheader:13  %p_lshr_f = call i31 @_ssdm_op_PartSelect.i31.i32.i32.i32(i32 %left1, i32 1, i32 31)
+
+ST_6: tmp_54 (82)  [1/1] 0.00ns  loc: testproject/fun.h:120
+.preheader1.preheader:14  %tmp_54 = zext i31 %p_lshr_f to i32
+
+ST_6: parent (83)  [1/1] 0.71ns  loc: testproject/fun.h:120
+.preheader1.preheader:15  %parent = select i1 %tmp_52, i32 %p_neg_t, i32 %tmp_54
+
+ST_6: tmp_55 (84)  [1/1] 0.00ns  loc: testproject/fun.h:120
+.preheader1.preheader:16  %tmp_55 = trunc i32 %parent to i8
+
+ST_6: tmp_56 (85)  [1/1] 0.00ns  loc: testproject/fun.h:120
+.preheader1.preheader:17  %tmp_56 = trunc i32 %parent to i6
+
+ST_6: p_shl_cast (86)  [1/1] 0.00ns  loc: testproject/fun.h:121
+.preheader1.preheader:18  %p_shl_cast = call i8 @_ssdm_op_BitConcatenate.i8.i6.i2(i6 %tmp_56, i2 0)
+
+ST_6: tmp_57 (87)  [1/1] 1.24ns  loc: testproject/fun.h:121
+.preheader1.preheader:19  %tmp_57 = add i8 %p_shl_cast, %tmp_55
+
+ST_6: StgValue_99 (88)  [1/1] 0.89ns  loc: testproject/fun.h:102
+.preheader1.preheader:20  br label %.preheader1
+
+ST_6: indvars_iv_next2 (186)  [1/1] 1.60ns  loc: testproject/fun.h:65->testproject/fun.h:92
+countHeight.exit.loopexit:0  %indvars_iv_next2 = add i32 %indvars_iv2, -1
+
+ST_6: StgValue_101 (187)  [1/1] 0.00ns
+countHeight.exit.loopexit:1  br label %countHeight.exit
+
+
+ <State 7>: 3.29ns
+ST_7: y (90)  [1/1] 0.00ns
+.preheader1:0  %y = phi i31 [ %y_1, %7 ], [ 0, %.preheader1.preheader ]
+
+ST_7: y_cast (91)  [1/1] 0.00ns  loc: testproject/fun.h:102
+.preheader1:1  %y_cast = zext i31 %y to i32
+
+ST_7: tmp_6 (92)  [1/1] 1.50ns  loc: testproject/fun.h:102
+.preheader1:2  %tmp_6 = icmp slt i32 %y_cast, %length_read
+
+ST_7: y_1 (93)  [1/1] 1.60ns  loc: testproject/fun.h:102
+.preheader1:3  %y_1 = add i31 %y, 1
+
+ST_7: StgValue_106 (94)  [1/1] 0.00ns  loc: testproject/fun.h:102
+.preheader1:4  br i1 %tmp_6, label %7, label %8
+
+ST_7: tmp_58 (96)  [1/1] 0.00ns  loc: testproject/fun.h:104
+:0  %tmp_58 = trunc i31 %y to i8
+
+ST_7: tmp_59 (97)  [1/1] 1.24ns  loc: testproject/fun.h:104
+:1  %tmp_59 = add i8 %tmp_1, %tmp_58
+
+ST_7: tmp_60_cast (98)  [1/1] 0.00ns  loc: testproject/fun.h:104
+:2  %tmp_60_cast = sext i8 %tmp_59 to i64
+
+ST_7: dataa_addr (99)  [1/1] 0.00ns  loc: testproject/fun.h:104
+:3  %dataa_addr = getelementptr [75 x double]* %dataa, i64 0, i64 %tmp_60_cast
+
+ST_7: tmp_60 (100)  [1/1] 1.24ns  loc: testproject/fun.h:113
+:4  %tmp_60 = add i8 %tmp_2, %tmp_58
+
+ST_7: tmp_61_cast (101)  [1/1] 0.00ns  loc: testproject/fun.h:113
+:5  %tmp_61_cast = sext i8 %tmp_60 to i64
+
+ST_7: dataa_addr_1 (102)  [1/1] 0.00ns  loc: testproject/fun.h:113
+:6  %dataa_addr_1 = getelementptr [75 x double]* %dataa, i64 0, i64 %tmp_61_cast
+
+ST_7: tmp_61 (103)  [1/1] 1.24ns  loc: testproject/fun.h:121
+:7  %tmp_61 = add i8 %tmp_57, %tmp_58
+
+ST_7: datac_addr (106)  [1/1] 0.00ns  loc: testproject/fun.h:104
+:10  %datac_addr = getelementptr [75 x double]* %datac, i64 0, i64 %tmp_60_cast
+
+ST_7: datac_addr_1 (107)  [1/1] 0.00ns  loc: testproject/fun.h:113
+:11  %datac_addr_1 = getelementptr [75 x double]* %datac, i64 0, i64 %tmp_61_cast
+
+ST_7: dataa_load (115)  [2/2] 2.05ns  loc: testproject/fun.h:104
+:19  %dataa_load = load double* %dataa_addr, align 8
+
+ST_7: datac_load (117)  [2/2] 2.05ns  loc: testproject/fun.h:104
+:21  %datac_load = load double* %datac_addr, align 8
+
+ST_7: dataa_load_1 (143)  [2/2] 2.05ns  loc: testproject/fun.h:113
+:47  %dataa_load_1 = load double* %dataa_addr_1, align 8
+
+ST_7: datac_load_1 (145)  [2/2] 2.05ns  loc: testproject/fun.h:113
+:49  %datac_load_1 = load double* %datac_addr_1, align 8
+
+ST_7: left_1 (181)  [1/1] 1.60ns  loc: testproject/fun.h:128
+:0  %left_1 = add nsw i32 %left1, 2
+
+ST_7: right (182)  [1/1] 1.60ns  loc: testproject/fun.h:129
+:1  %right = add nsw i32 %right1, 2
+
+ST_7: leaves_1 (183)  [1/1] 1.60ns  loc: testproject/fun.h:100
+:2  %leaves_1 = add nsw i32 %leaves1, -2
+
+ST_7: StgValue_124 (184)  [1/1] 0.00ns  loc: testproject/fun.h:100
+:3  br label %6
+
+
+ <State 8>: 9.09ns
+ST_8: dataa_load (115)  [1/2] 2.05ns  loc: testproject/fun.h:104
+:19  %dataa_load = load double* %dataa_addr, align 8
+
+ST_8: tmp_s (116)  [5/5] 7.04ns  loc: testproject/fun.h:104
+:20  %tmp_s = fmul double %dataa_load, 5.802030e-01
+
+ST_8: datac_load (117)  [1/2] 2.05ns  loc: testproject/fun.h:104
+:21  %datac_load = load double* %datac_addr, align 8
+
+ST_8: tmp_4 (118)  [5/5] 7.04ns  loc: testproject/fun.h:104
+:22  %tmp_4 = fmul double %datac_load, 1.406870e-01
+
+ST_8: tmp_12 (126)  [5/5] 7.04ns  loc: testproject/fun.h:106
+:30  %tmp_12 = fmul double %dataa_load, 1.875830e-01
+
+ST_8: tmp_13 (127)  [5/5] 7.04ns  loc: testproject/fun.h:106
+:31  %tmp_13 = fmul double %datac_load, 5.871870e-01
+
+ST_8: tmp_18 (133)  [5/5] 7.04ns  loc: testproject/fun.h:108
+:37  %tmp_18 = fmul double %dataa_load, 4.644290e-01
+
+ST_8: tmp_22 (138)  [5/5] 7.04ns  loc: testproject/fun.h:110
+:42  %tmp_22 = fmul double %datac_load, 3.943190e-01
+
+ST_8: dataa_load_1 (143)  [1/2] 2.05ns  loc: testproject/fun.h:113
+:47  %dataa_load_1 = load double* %dataa_addr_1, align 8
+
+ST_8: tmp_26 (144)  [5/5] 7.04ns  loc: testproject/fun.h:113
+:48  %tmp_26 = fmul double %dataa_load_1, 5.802030e-01
+
+ST_8: datac_load_1 (145)  [1/2] 2.05ns  loc: testproject/fun.h:113
+:49  %datac_load_1 = load double* %datac_addr_1, align 8
+
+ST_8: tmp_27 (146)  [5/5] 7.04ns  loc: testproject/fun.h:113
+:50  %tmp_27 = fmul double %datac_load_1, 1.406870e-01
+
+ST_8: tmp_32 (154)  [5/5] 7.04ns  loc: testproject/fun.h:115
+:58  %tmp_32 = fmul double %dataa_load_1, 1.875830e-01
+
+ST_8: tmp_33 (155)  [5/5] 7.04ns  loc: testproject/fun.h:115
+:59  %tmp_33 = fmul double %datac_load_1, 5.871870e-01
+
+ST_8: tmp_38 (161)  [5/5] 7.04ns  loc: testproject/fun.h:117
+:65  %tmp_38 = fmul double %dataa_load_1, 4.644290e-01
+
+ST_8: tmp_42 (166)  [5/5] 7.04ns  loc: testproject/fun.h:119
+:70  %tmp_42 = fmul double %datac_load_1, 3.943190e-01
+
+
+ <State 9>: 7.04ns
+ST_9: tmp_s (116)  [4/5] 7.04ns  loc: testproject/fun.h:104
+:20  %tmp_s = fmul double %dataa_load, 5.802030e-01
+
+ST_9: tmp_4 (118)  [4/5] 7.04ns  loc: testproject/fun.h:104
+:22  %tmp_4 = fmul double %datac_load, 1.406870e-01
+
+ST_9: tmp_12 (126)  [4/5] 7.04ns  loc: testproject/fun.h:106
+:30  %tmp_12 = fmul double %dataa_load, 1.875830e-01
+
+ST_9: tmp_13 (127)  [4/5] 7.04ns  loc: testproject/fun.h:106
+:31  %tmp_13 = fmul double %datac_load, 5.871870e-01
+
+ST_9: tmp_18 (133)  [4/5] 7.04ns  loc: testproject/fun.h:108
+:37  %tmp_18 = fmul double %dataa_load, 4.644290e-01
+
+ST_9: tmp_22 (138)  [4/5] 7.04ns  loc: testproject/fun.h:110
+:42  %tmp_22 = fmul double %datac_load, 3.943190e-01
+
+ST_9: tmp_26 (144)  [4/5] 7.04ns  loc: testproject/fun.h:113
+:48  %tmp_26 = fmul double %dataa_load_1, 5.802030e-01
+
+ST_9: tmp_27 (146)  [4/5] 7.04ns  loc: testproject/fun.h:113
+:50  %tmp_27 = fmul double %datac_load_1, 1.406870e-01
+
+ST_9: tmp_32 (154)  [4/5] 7.04ns  loc: testproject/fun.h:115
+:58  %tmp_32 = fmul double %dataa_load_1, 1.875830e-01
+
+ST_9: tmp_33 (155)  [4/5] 7.04ns  loc: testproject/fun.h:115
+:59  %tmp_33 = fmul double %datac_load_1, 5.871870e-01
+
+ST_9: tmp_38 (161)  [4/5] 7.04ns  loc: testproject/fun.h:117
+:65  %tmp_38 = fmul double %dataa_load_1, 4.644290e-01
+
+ST_9: tmp_42 (166)  [4/5] 7.04ns  loc: testproject/fun.h:119
+:70  %tmp_42 = fmul double %datac_load_1, 3.943190e-01
+
+
+ <State 10>: 7.04ns
+ST_10: tmp_s (116)  [3/5] 7.04ns  loc: testproject/fun.h:104
+:20  %tmp_s = fmul double %dataa_load, 5.802030e-01
+
+ST_10: tmp_4 (118)  [3/5] 7.04ns  loc: testproject/fun.h:104
+:22  %tmp_4 = fmul double %datac_load, 1.406870e-01
+
+ST_10: tmp_12 (126)  [3/5] 7.04ns  loc: testproject/fun.h:106
+:30  %tmp_12 = fmul double %dataa_load, 1.875830e-01
+
+ST_10: tmp_13 (127)  [3/5] 7.04ns  loc: testproject/fun.h:106
+:31  %tmp_13 = fmul double %datac_load, 5.871870e-01
+
+ST_10: tmp_18 (133)  [3/5] 7.04ns  loc: testproject/fun.h:108
+:37  %tmp_18 = fmul double %dataa_load, 4.644290e-01
+
+ST_10: tmp_22 (138)  [3/5] 7.04ns  loc: testproject/fun.h:110
+:42  %tmp_22 = fmul double %datac_load, 3.943190e-01
+
+ST_10: tmp_26 (144)  [3/5] 7.04ns  loc: testproject/fun.h:113
+:48  %tmp_26 = fmul double %dataa_load_1, 5.802030e-01
+
+ST_10: tmp_27 (146)  [3/5] 7.04ns  loc: testproject/fun.h:113
+:50  %tmp_27 = fmul double %datac_load_1, 1.406870e-01
+
+ST_10: tmp_32 (154)  [3/5] 7.04ns  loc: testproject/fun.h:115
+:58  %tmp_32 = fmul double %dataa_load_1, 1.875830e-01
+
+ST_10: tmp_33 (155)  [3/5] 7.04ns  loc: testproject/fun.h:115
+:59  %tmp_33 = fmul double %datac_load_1, 5.871870e-01
+
+ST_10: tmp_38 (161)  [3/5] 7.04ns  loc: testproject/fun.h:117
+:65  %tmp_38 = fmul double %dataa_load_1, 4.644290e-01
+
+ST_10: tmp_42 (166)  [3/5] 7.04ns  loc: testproject/fun.h:119
+:70  %tmp_42 = fmul double %datac_load_1, 3.943190e-01
+
+
+ <State 11>: 7.04ns
+ST_11: datag_addr (109)  [1/1] 0.00ns  loc: testproject/fun.h:104
+:13  %datag_addr = getelementptr [75 x double]* %datag, i64 0, i64 %tmp_60_cast
+
+ST_11: datag_addr_1 (110)  [1/1] 0.00ns  loc: testproject/fun.h:113
+:14  %datag_addr_1 = getelementptr [75 x double]* %datag, i64 0, i64 %tmp_61_cast
+
+ST_11: tmp_s (116)  [2/5] 7.04ns  loc: testproject/fun.h:104
+:20  %tmp_s = fmul double %dataa_load, 5.802030e-01
+
+ST_11: tmp_4 (118)  [2/5] 7.04ns  loc: testproject/fun.h:104
+:22  %tmp_4 = fmul double %datac_load, 1.406870e-01
+
+ST_11: datag_load (120)  [2/2] 2.05ns  loc: testproject/fun.h:104
+:24  %datag_load = load double* %datag_addr, align 8
+
+ST_11: tmp_12 (126)  [2/5] 7.04ns  loc: testproject/fun.h:106
+:30  %tmp_12 = fmul double %dataa_load, 1.875830e-01
+
+ST_11: tmp_13 (127)  [2/5] 7.04ns  loc: testproject/fun.h:106
+:31  %tmp_13 = fmul double %datac_load, 5.871870e-01
+
+ST_11: tmp_18 (133)  [2/5] 7.04ns  loc: testproject/fun.h:108
+:37  %tmp_18 = fmul double %dataa_load, 4.644290e-01
+
+ST_11: tmp_22 (138)  [2/5] 7.04ns  loc: testproject/fun.h:110
+:42  %tmp_22 = fmul double %datac_load, 3.943190e-01
+
+ST_11: tmp_26 (144)  [2/5] 7.04ns  loc: testproject/fun.h:113
+:48  %tmp_26 = fmul double %dataa_load_1, 5.802030e-01
+
+ST_11: tmp_27 (146)  [2/5] 7.04ns  loc: testproject/fun.h:113
+:50  %tmp_27 = fmul double %datac_load_1, 1.406870e-01
+
+ST_11: datag_load_1 (148)  [2/2] 2.05ns  loc: testproject/fun.h:113
+:52  %datag_load_1 = load double* %datag_addr_1, align 8
+
+ST_11: tmp_32 (154)  [2/5] 7.04ns  loc: testproject/fun.h:115
+:58  %tmp_32 = fmul double %dataa_load_1, 1.875830e-01
+
+ST_11: tmp_33 (155)  [2/5] 7.04ns  loc: testproject/fun.h:115
+:59  %tmp_33 = fmul double %datac_load_1, 5.871870e-01
+
+ST_11: tmp_38 (161)  [2/5] 7.04ns  loc: testproject/fun.h:117
+:65  %tmp_38 = fmul double %dataa_load_1, 4.644290e-01
+
+ST_11: tmp_42 (166)  [2/5] 7.04ns  loc: testproject/fun.h:119
+:70  %tmp_42 = fmul double %datac_load_1, 3.943190e-01
+
+
+ <State 12>: 9.09ns
+ST_12: tmp_s (116)  [1/5] 7.04ns  loc: testproject/fun.h:104
+:20  %tmp_s = fmul double %dataa_load, 5.802030e-01
+
+ST_12: tmp_4 (118)  [1/5] 7.04ns  loc: testproject/fun.h:104
+:22  %tmp_4 = fmul double %datac_load, 1.406870e-01
+
+ST_12: datag_load (120)  [1/2] 2.05ns  loc: testproject/fun.h:104
+:24  %datag_load = load double* %datag_addr, align 8
+
+ST_12: tmp_7 (121)  [5/5] 7.04ns  loc: testproject/fun.h:104
+:25  %tmp_7 = fmul double %datag_load, 2.322150e-01
+
+ST_12: tmp_12 (126)  [1/5] 7.04ns  loc: testproject/fun.h:106
+:30  %tmp_12 = fmul double %dataa_load, 1.875830e-01
+
+ST_12: tmp_13 (127)  [1/5] 7.04ns  loc: testproject/fun.h:106
+:31  %tmp_13 = fmul double %datac_load, 5.871870e-01
+
+ST_12: tmp_15 (129)  [5/5] 7.04ns  loc: testproject/fun.h:106
+:33  %tmp_15 = fmul double %datag_load, 9.379130e-02
+
+ST_12: tmp_18 (133)  [1/5] 7.04ns  loc: testproject/fun.h:108
+:37  %tmp_18 = fmul double %dataa_load, 4.644290e-01
+
+ST_12: tmp_20 (135)  [5/5] 7.04ns  loc: testproject/fun.h:108
+:39  %tmp_20 = fmul double %datag_load, 3.479880e-01
+
+ST_12: tmp_22 (138)  [1/5] 7.04ns  loc: testproject/fun.h:110
+:42  %tmp_22 = fmul double %datac_load, 3.943190e-01
+
+ST_12: tmp_26 (144)  [1/5] 7.04ns  loc: testproject/fun.h:113
+:48  %tmp_26 = fmul double %dataa_load_1, 5.802030e-01
+
+ST_12: tmp_27 (146)  [1/5] 7.04ns  loc: testproject/fun.h:113
+:50  %tmp_27 = fmul double %datac_load_1, 1.406870e-01
+
+ST_12: datag_load_1 (148)  [1/2] 2.05ns  loc: testproject/fun.h:113
+:52  %datag_load_1 = load double* %datag_addr_1, align 8
+
+ST_12: tmp_29 (149)  [5/5] 7.04ns  loc: testproject/fun.h:113
+:53  %tmp_29 = fmul double %datag_load_1, 2.322150e-01
+
+ST_12: tmp_32 (154)  [1/5] 7.04ns  loc: testproject/fun.h:115
+:58  %tmp_32 = fmul double %dataa_load_1, 1.875830e-01
+
+ST_12: tmp_33 (155)  [1/5] 7.04ns  loc: testproject/fun.h:115
+:59  %tmp_33 = fmul double %datac_load_1, 5.871870e-01
+
+ST_12: tmp_35 (157)  [5/5] 7.04ns  loc: testproject/fun.h:115
+:61  %tmp_35 = fmul double %datag_load_1, 9.379130e-02
+
+ST_12: tmp_38 (161)  [1/5] 7.04ns  loc: testproject/fun.h:117
+:65  %tmp_38 = fmul double %dataa_load_1, 4.644290e-01
+
+ST_12: tmp_40 (163)  [5/5] 7.04ns  loc: testproject/fun.h:117
+:67  %tmp_40 = fmul double %datag_load_1, 3.479880e-01
+
+ST_12: tmp_42 (166)  [1/5] 7.04ns  loc: testproject/fun.h:119
+:70  %tmp_42 = fmul double %datac_load_1, 3.943190e-01
+
+
+ <State 13>: 9.18ns
+ST_13: tmp_5 (119)  [4/4] 9.18ns  loc: testproject/fun.h:104
+:23  %tmp_5 = fadd double %tmp_s, %tmp_4
+
+ST_13: tmp_7 (121)  [4/5] 7.04ns  loc: testproject/fun.h:104
+:25  %tmp_7 = fmul double %datag_load, 2.322150e-01
+
+ST_13: tmp_14 (128)  [4/4] 9.18ns  loc: testproject/fun.h:106
+:32  %tmp_14 = fadd double %tmp_12, %tmp_13
+
+ST_13: tmp_15 (129)  [4/5] 7.04ns  loc: testproject/fun.h:106
+:33  %tmp_15 = fmul double %datag_load, 9.379130e-02
+
+ST_13: tmp_19 (134)  [4/4] 9.18ns  loc: testproject/fun.h:108
+:38  %tmp_19 = fadd double %tmp_18, %tmp_4
+
+ST_13: tmp_20 (135)  [4/5] 7.04ns  loc: testproject/fun.h:108
+:39  %tmp_20 = fmul double %datag_load, 3.479880e-01
+
+ST_13: tmp_23 (139)  [4/4] 9.18ns  loc: testproject/fun.h:110
+:43  %tmp_23 = fadd double %tmp_12, %tmp_22
+
+ST_13: tmp_28 (147)  [4/4] 9.18ns  loc: testproject/fun.h:113
+:51  %tmp_28 = fadd double %tmp_26, %tmp_27
+
+ST_13: tmp_29 (149)  [4/5] 7.04ns  loc: testproject/fun.h:113
+:53  %tmp_29 = fmul double %datag_load_1, 2.322150e-01
+
+ST_13: tmp_34 (156)  [4/4] 9.18ns  loc: testproject/fun.h:115
+:60  %tmp_34 = fadd double %tmp_32, %tmp_33
+
+ST_13: tmp_35 (157)  [4/5] 7.04ns  loc: testproject/fun.h:115
+:61  %tmp_35 = fmul double %datag_load_1, 9.379130e-02
+
+ST_13: tmp_39 (162)  [4/4] 9.18ns  loc: testproject/fun.h:117
+:66  %tmp_39 = fadd double %tmp_38, %tmp_27
+
+ST_13: tmp_40 (163)  [4/5] 7.04ns  loc: testproject/fun.h:117
+:67  %tmp_40 = fmul double %datag_load_1, 3.479880e-01
+
+ST_13: tmp_43 (167)  [4/4] 9.18ns  loc: testproject/fun.h:119
+:71  %tmp_43 = fadd double %tmp_32, %tmp_42
+
+
+ <State 14>: 9.18ns
+ST_14: tmp_5 (119)  [3/4] 9.18ns  loc: testproject/fun.h:104
+:23  %tmp_5 = fadd double %tmp_s, %tmp_4
+
+ST_14: tmp_7 (121)  [3/5] 7.04ns  loc: testproject/fun.h:104
+:25  %tmp_7 = fmul double %datag_load, 2.322150e-01
+
+ST_14: tmp_14 (128)  [3/4] 9.18ns  loc: testproject/fun.h:106
+:32  %tmp_14 = fadd double %tmp_12, %tmp_13
+
+ST_14: tmp_15 (129)  [3/5] 7.04ns  loc: testproject/fun.h:106
+:33  %tmp_15 = fmul double %datag_load, 9.379130e-02
+
+ST_14: tmp_19 (134)  [3/4] 9.18ns  loc: testproject/fun.h:108
+:38  %tmp_19 = fadd double %tmp_18, %tmp_4
+
+ST_14: tmp_20 (135)  [3/5] 7.04ns  loc: testproject/fun.h:108
+:39  %tmp_20 = fmul double %datag_load, 3.479880e-01
+
+ST_14: tmp_23 (139)  [3/4] 9.18ns  loc: testproject/fun.h:110
+:43  %tmp_23 = fadd double %tmp_12, %tmp_22
+
+ST_14: tmp_28 (147)  [3/4] 9.18ns  loc: testproject/fun.h:113
+:51  %tmp_28 = fadd double %tmp_26, %tmp_27
+
+ST_14: tmp_29 (149)  [3/5] 7.04ns  loc: testproject/fun.h:113
+:53  %tmp_29 = fmul double %datag_load_1, 2.322150e-01
+
+ST_14: tmp_34 (156)  [3/4] 9.18ns  loc: testproject/fun.h:115
+:60  %tmp_34 = fadd double %tmp_32, %tmp_33
+
+ST_14: tmp_35 (157)  [3/5] 7.04ns  loc: testproject/fun.h:115
+:61  %tmp_35 = fmul double %datag_load_1, 9.379130e-02
+
+ST_14: tmp_39 (162)  [3/4] 9.18ns  loc: testproject/fun.h:117
+:66  %tmp_39 = fadd double %tmp_38, %tmp_27
+
+ST_14: tmp_40 (163)  [3/5] 7.04ns  loc: testproject/fun.h:117
+:67  %tmp_40 = fmul double %datag_load_1, 3.479880e-01
+
+ST_14: tmp_43 (167)  [3/4] 9.18ns  loc: testproject/fun.h:119
+:71  %tmp_43 = fadd double %tmp_32, %tmp_42
+
+
+ <State 15>: 9.18ns
+ST_15: datat_addr (112)  [1/1] 0.00ns  loc: testproject/fun.h:104
+:16  %datat_addr = getelementptr [75 x double]* %datat, i64 0, i64 %tmp_60_cast
+
+ST_15: datat_addr_1 (113)  [1/1] 0.00ns  loc: testproject/fun.h:113
+:17  %datat_addr_1 = getelementptr [75 x double]* %datat, i64 0, i64 %tmp_61_cast
+
+ST_15: tmp_5 (119)  [2/4] 9.18ns  loc: testproject/fun.h:104
+:23  %tmp_5 = fadd double %tmp_s, %tmp_4
+
+ST_15: tmp_7 (121)  [2/5] 7.04ns  loc: testproject/fun.h:104
+:25  %tmp_7 = fmul double %datag_load, 2.322150e-01
+
+ST_15: datat_load (123)  [2/2] 2.05ns  loc: testproject/fun.h:104
+:27  %datat_load = load double* %datat_addr, align 8
+
+ST_15: tmp_14 (128)  [2/4] 9.18ns  loc: testproject/fun.h:106
+:32  %tmp_14 = fadd double %tmp_12, %tmp_13
+
+ST_15: tmp_15 (129)  [2/5] 7.04ns  loc: testproject/fun.h:106
+:33  %tmp_15 = fmul double %datag_load, 9.379130e-02
+
+ST_15: tmp_19 (134)  [2/4] 9.18ns  loc: testproject/fun.h:108
+:38  %tmp_19 = fadd double %tmp_18, %tmp_4
+
+ST_15: tmp_20 (135)  [2/5] 7.04ns  loc: testproject/fun.h:108
+:39  %tmp_20 = fmul double %datag_load, 3.479880e-01
+
+ST_15: tmp_23 (139)  [2/4] 9.18ns  loc: testproject/fun.h:110
+:43  %tmp_23 = fadd double %tmp_12, %tmp_22
+
+ST_15: tmp_28 (147)  [2/4] 9.18ns  loc: testproject/fun.h:113
+:51  %tmp_28 = fadd double %tmp_26, %tmp_27
+
+ST_15: tmp_29 (149)  [2/5] 7.04ns  loc: testproject/fun.h:113
+:53  %tmp_29 = fmul double %datag_load_1, 2.322150e-01
+
+ST_15: datat_load_1 (151)  [2/2] 2.05ns  loc: testproject/fun.h:113
+:55  %datat_load_1 = load double* %datat_addr_1, align 8
+
+ST_15: tmp_34 (156)  [2/4] 9.18ns  loc: testproject/fun.h:115
+:60  %tmp_34 = fadd double %tmp_32, %tmp_33
+
+ST_15: tmp_35 (157)  [2/5] 7.04ns  loc: testproject/fun.h:115
+:61  %tmp_35 = fmul double %datag_load_1, 9.379130e-02
+
+ST_15: tmp_39 (162)  [2/4] 9.18ns  loc: testproject/fun.h:117
+:66  %tmp_39 = fadd double %tmp_38, %tmp_27
+
+ST_15: tmp_40 (163)  [2/5] 7.04ns  loc: testproject/fun.h:117
+:67  %tmp_40 = fmul double %datag_load_1, 3.479880e-01
+
+ST_15: tmp_43 (167)  [2/4] 9.18ns  loc: testproject/fun.h:119
+:71  %tmp_43 = fadd double %tmp_32, %tmp_42
+
+
+ <State 16>: 9.18ns
+ST_16: tmp_5 (119)  [1/4] 9.18ns  loc: testproject/fun.h:104
+:23  %tmp_5 = fadd double %tmp_s, %tmp_4
+
+ST_16: tmp_7 (121)  [1/5] 7.04ns  loc: testproject/fun.h:104
+:25  %tmp_7 = fmul double %datag_load, 2.322150e-01
+
+ST_16: datat_load (123)  [1/2] 2.05ns  loc: testproject/fun.h:104
+:27  %datat_load = load double* %datat_addr, align 8
+
+ST_16: tmp_11 (124)  [5/5] 7.04ns  loc: testproject/fun.h:104
+:28  %tmp_11 = fmul double %datat_load, 4.689570e-02
+
+ST_16: tmp_14 (128)  [1/4] 9.18ns  loc: testproject/fun.h:106
+:32  %tmp_14 = fadd double %tmp_12, %tmp_13
+
+ST_16: tmp_15 (129)  [1/5] 7.04ns  loc: testproject/fun.h:106
+:33  %tmp_15 = fmul double %datag_load, 9.379130e-02
+
+ST_16: tmp_17 (131)  [5/5] 7.04ns  loc: testproject/fun.h:106
+:35  %tmp_17 = fmul double %datat_load, 1.314400e-01
+
+ST_16: tmp_19 (134)  [1/4] 9.18ns  loc: testproject/fun.h:108
+:38  %tmp_19 = fadd double %tmp_18, %tmp_4
+
+ST_16: tmp_20 (135)  [1/5] 7.04ns  loc: testproject/fun.h:108
+:39  %tmp_20 = fmul double %datag_load, 3.479880e-01
+
+ST_16: tmp_23 (139)  [1/4] 9.18ns  loc: testproject/fun.h:110
+:43  %tmp_23 = fadd double %tmp_12, %tmp_22
+
+ST_16: tmp_25 (141)  [5/5] 7.04ns  loc: testproject/fun.h:110
+:45  %tmp_25 = fmul double %datat_load, 3.243070e-01
+
+ST_16: tmp_28 (147)  [1/4] 9.18ns  loc: testproject/fun.h:113
+:51  %tmp_28 = fadd double %tmp_26, %tmp_27
+
+ST_16: tmp_29 (149)  [1/5] 7.04ns  loc: testproject/fun.h:113
+:53  %tmp_29 = fmul double %datag_load_1, 2.322150e-01
+
+ST_16: datat_load_1 (151)  [1/2] 2.05ns  loc: testproject/fun.h:113
+:55  %datat_load_1 = load double* %datat_addr_1, align 8
+
+ST_16: tmp_31 (152)  [5/5] 7.04ns  loc: testproject/fun.h:113
+:56  %tmp_31 = fmul double %datat_load_1, 4.689570e-02
+
+ST_16: tmp_34 (156)  [1/4] 9.18ns  loc: testproject/fun.h:115
+:60  %tmp_34 = fadd double %tmp_32, %tmp_33
+
+ST_16: tmp_35 (157)  [1/5] 7.04ns  loc: testproject/fun.h:115
+:61  %tmp_35 = fmul double %datag_load_1, 9.379130e-02
+
+ST_16: tmp_37 (159)  [5/5] 7.04ns  loc: testproject/fun.h:115
+:63  %tmp_37 = fmul double %datat_load_1, 1.314400e-01
+
+ST_16: tmp_39 (162)  [1/4] 9.18ns  loc: testproject/fun.h:117
+:66  %tmp_39 = fadd double %tmp_38, %tmp_27
+
+ST_16: tmp_40 (163)  [1/5] 7.04ns  loc: testproject/fun.h:117
+:67  %tmp_40 = fmul double %datag_load_1, 3.479880e-01
+
+ST_16: tmp_43 (167)  [1/4] 9.18ns  loc: testproject/fun.h:119
+:71  %tmp_43 = fadd double %tmp_32, %tmp_42
+
+ST_16: tmp_45 (169)  [5/5] 7.04ns  loc: testproject/fun.h:119
+:73  %tmp_45 = fmul double %datat_load_1, 3.243070e-01
+
+
+ <State 17>: 9.18ns
+ST_17: tmp_10 (122)  [4/4] 9.18ns  loc: testproject/fun.h:104
+:26  %tmp_10 = fadd double %tmp_5, %tmp_7
+
+ST_17: tmp_11 (124)  [4/5] 7.04ns  loc: testproject/fun.h:104
+:28  %tmp_11 = fmul double %datat_load, 4.689570e-02
+
+ST_17: tmp_16 (130)  [4/4] 9.18ns  loc: testproject/fun.h:106
+:34  %tmp_16 = fadd double %tmp_14, %tmp_15
+
+ST_17: tmp_17 (131)  [4/5] 7.04ns  loc: testproject/fun.h:106
+:35  %tmp_17 = fmul double %datat_load, 1.314400e-01
+
+ST_17: tmp_21 (136)  [4/4] 9.18ns  loc: testproject/fun.h:108
+:40  %tmp_21 = fadd double %tmp_19, %tmp_20
+
+ST_17: tmp_24 (140)  [4/4] 9.18ns  loc: testproject/fun.h:110
+:44  %tmp_24 = fadd double %tmp_23, %tmp_15
+
+ST_17: tmp_25 (141)  [4/5] 7.04ns  loc: testproject/fun.h:110
+:45  %tmp_25 = fmul double %datat_load, 3.243070e-01
+
+ST_17: tmp_30 (150)  [4/4] 9.18ns  loc: testproject/fun.h:113
+:54  %tmp_30 = fadd double %tmp_28, %tmp_29
+
+ST_17: tmp_31 (152)  [4/5] 7.04ns  loc: testproject/fun.h:113
+:56  %tmp_31 = fmul double %datat_load_1, 4.689570e-02
+
+ST_17: tmp_36 (158)  [4/4] 9.18ns  loc: testproject/fun.h:115
+:62  %tmp_36 = fadd double %tmp_34, %tmp_35
+
+ST_17: tmp_37 (159)  [4/5] 7.04ns  loc: testproject/fun.h:115
+:63  %tmp_37 = fmul double %datat_load_1, 1.314400e-01
+
+ST_17: tmp_41 (164)  [4/4] 9.18ns  loc: testproject/fun.h:117
+:68  %tmp_41 = fadd double %tmp_39, %tmp_40
+
+ST_17: tmp_44 (168)  [4/4] 9.18ns  loc: testproject/fun.h:119
+:72  %tmp_44 = fadd double %tmp_43, %tmp_35
+
+ST_17: tmp_45 (169)  [4/5] 7.04ns  loc: testproject/fun.h:119
+:73  %tmp_45 = fmul double %datat_load_1, 3.243070e-01
+
+
+ <State 18>: 9.18ns
+ST_18: tmp_10 (122)  [3/4] 9.18ns  loc: testproject/fun.h:104
+:26  %tmp_10 = fadd double %tmp_5, %tmp_7
+
+ST_18: tmp_11 (124)  [3/5] 7.04ns  loc: testproject/fun.h:104
+:28  %tmp_11 = fmul double %datat_load, 4.689570e-02
+
+ST_18: tmp_16 (130)  [3/4] 9.18ns  loc: testproject/fun.h:106
+:34  %tmp_16 = fadd double %tmp_14, %tmp_15
+
+ST_18: tmp_17 (131)  [3/5] 7.04ns  loc: testproject/fun.h:106
+:35  %tmp_17 = fmul double %datat_load, 1.314400e-01
+
+ST_18: tmp_21 (136)  [3/4] 9.18ns  loc: testproject/fun.h:108
+:40  %tmp_21 = fadd double %tmp_19, %tmp_20
+
+ST_18: tmp_24 (140)  [3/4] 9.18ns  loc: testproject/fun.h:110
+:44  %tmp_24 = fadd double %tmp_23, %tmp_15
+
+ST_18: tmp_25 (141)  [3/5] 7.04ns  loc: testproject/fun.h:110
+:45  %tmp_25 = fmul double %datat_load, 3.243070e-01
+
+ST_18: tmp_30 (150)  [3/4] 9.18ns  loc: testproject/fun.h:113
+:54  %tmp_30 = fadd double %tmp_28, %tmp_29
+
+ST_18: tmp_31 (152)  [3/5] 7.04ns  loc: testproject/fun.h:113
+:56  %tmp_31 = fmul double %datat_load_1, 4.689570e-02
+
+ST_18: tmp_36 (158)  [3/4] 9.18ns  loc: testproject/fun.h:115
+:62  %tmp_36 = fadd double %tmp_34, %tmp_35
+
+ST_18: tmp_37 (159)  [3/5] 7.04ns  loc: testproject/fun.h:115
+:63  %tmp_37 = fmul double %datat_load_1, 1.314400e-01
+
+ST_18: tmp_41 (164)  [3/4] 9.18ns  loc: testproject/fun.h:117
+:68  %tmp_41 = fadd double %tmp_39, %tmp_40
+
+ST_18: tmp_44 (168)  [3/4] 9.18ns  loc: testproject/fun.h:119
+:72  %tmp_44 = fadd double %tmp_43, %tmp_35
+
+ST_18: tmp_45 (169)  [3/5] 7.04ns  loc: testproject/fun.h:119
+:73  %tmp_45 = fmul double %datat_load_1, 3.243070e-01
+
+
+ <State 19>: 9.18ns
+ST_19: tmp_10 (122)  [2/4] 9.18ns  loc: testproject/fun.h:104
+:26  %tmp_10 = fadd double %tmp_5, %tmp_7
+
+ST_19: tmp_11 (124)  [2/5] 7.04ns  loc: testproject/fun.h:104
+:28  %tmp_11 = fmul double %datat_load, 4.689570e-02
+
+ST_19: tmp_16 (130)  [2/4] 9.18ns  loc: testproject/fun.h:106
+:34  %tmp_16 = fadd double %tmp_14, %tmp_15
+
+ST_19: tmp_17 (131)  [2/5] 7.04ns  loc: testproject/fun.h:106
+:35  %tmp_17 = fmul double %datat_load, 1.314400e-01
+
+ST_19: tmp_21 (136)  [2/4] 9.18ns  loc: testproject/fun.h:108
+:40  %tmp_21 = fadd double %tmp_19, %tmp_20
+
+ST_19: tmp_24 (140)  [2/4] 9.18ns  loc: testproject/fun.h:110
+:44  %tmp_24 = fadd double %tmp_23, %tmp_15
+
+ST_19: tmp_25 (141)  [2/5] 7.04ns  loc: testproject/fun.h:110
+:45  %tmp_25 = fmul double %datat_load, 3.243070e-01
+
+ST_19: tmp_30 (150)  [2/4] 9.18ns  loc: testproject/fun.h:113
+:54  %tmp_30 = fadd double %tmp_28, %tmp_29
+
+ST_19: tmp_31 (152)  [2/5] 7.04ns  loc: testproject/fun.h:113
+:56  %tmp_31 = fmul double %datat_load_1, 4.689570e-02
+
+ST_19: tmp_36 (158)  [2/4] 9.18ns  loc: testproject/fun.h:115
+:62  %tmp_36 = fadd double %tmp_34, %tmp_35
+
+ST_19: tmp_37 (159)  [2/5] 7.04ns  loc: testproject/fun.h:115
+:63  %tmp_37 = fmul double %datat_load_1, 1.314400e-01
+
+ST_19: tmp_41 (164)  [2/4] 9.18ns  loc: testproject/fun.h:117
+:68  %tmp_41 = fadd double %tmp_39, %tmp_40
+
+ST_19: tmp_44 (168)  [2/4] 9.18ns  loc: testproject/fun.h:119
+:72  %tmp_44 = fadd double %tmp_43, %tmp_35
+
+ST_19: tmp_45 (169)  [2/5] 7.04ns  loc: testproject/fun.h:119
+:73  %tmp_45 = fmul double %datat_load_1, 3.243070e-01
+
+
+ <State 20>: 9.18ns
+ST_20: tmp_10 (122)  [1/4] 9.18ns  loc: testproject/fun.h:104
+:26  %tmp_10 = fadd double %tmp_5, %tmp_7
+
+ST_20: tmp_11 (124)  [1/5] 7.04ns  loc: testproject/fun.h:104
+:28  %tmp_11 = fmul double %datat_load, 4.689570e-02
+
+ST_20: tmp_16 (130)  [1/4] 9.18ns  loc: testproject/fun.h:106
+:34  %tmp_16 = fadd double %tmp_14, %tmp_15
+
+ST_20: tmp_17 (131)  [1/5] 7.04ns  loc: testproject/fun.h:106
+:35  %tmp_17 = fmul double %datat_load, 1.314400e-01
+
+ST_20: tmp_21 (136)  [1/4] 9.18ns  loc: testproject/fun.h:108
+:40  %tmp_21 = fadd double %tmp_19, %tmp_20
+
+ST_20: tmp_24 (140)  [1/4] 9.18ns  loc: testproject/fun.h:110
+:44  %tmp_24 = fadd double %tmp_23, %tmp_15
+
+ST_20: tmp_25 (141)  [1/5] 7.04ns  loc: testproject/fun.h:110
+:45  %tmp_25 = fmul double %datat_load, 3.243070e-01
+
+ST_20: tmp_30 (150)  [1/4] 9.18ns  loc: testproject/fun.h:113
+:54  %tmp_30 = fadd double %tmp_28, %tmp_29
+
+ST_20: tmp_31 (152)  [1/5] 7.04ns  loc: testproject/fun.h:113
+:56  %tmp_31 = fmul double %datat_load_1, 4.689570e-02
+
+ST_20: tmp_36 (158)  [1/4] 9.18ns  loc: testproject/fun.h:115
+:62  %tmp_36 = fadd double %tmp_34, %tmp_35
+
+ST_20: tmp_37 (159)  [1/5] 7.04ns  loc: testproject/fun.h:115
+:63  %tmp_37 = fmul double %datat_load_1, 1.314400e-01
+
+ST_20: tmp_41 (164)  [1/4] 9.18ns  loc: testproject/fun.h:117
+:68  %tmp_41 = fadd double %tmp_39, %tmp_40
+
+ST_20: tmp_44 (168)  [1/4] 9.18ns  loc: testproject/fun.h:119
+:72  %tmp_44 = fadd double %tmp_43, %tmp_35
+
+ST_20: tmp_45 (169)  [1/5] 7.04ns  loc: testproject/fun.h:119
+:73  %tmp_45 = fmul double %datat_load_1, 3.243070e-01
+
+
+ <State 21>: 9.18ns
+ST_21: lefta (125)  [4/4] 9.18ns  loc: testproject/fun.h:104
+:29  %lefta = fadd double %tmp_10, %tmp_11
+
+ST_21: leftc (132)  [4/4] 9.18ns  loc: testproject/fun.h:106
+:36  %leftc = fadd double %tmp_16, %tmp_17
+
+ST_21: leftg (137)  [4/4] 9.18ns  loc: testproject/fun.h:108
+:41  %leftg = fadd double %tmp_21, %tmp_11
+
+ST_21: leftt (142)  [4/4] 9.18ns  loc: testproject/fun.h:110
+:46  %leftt = fadd double %tmp_24, %tmp_25
+
+ST_21: righta (153)  [4/4] 9.18ns  loc: testproject/fun.h:113
+:57  %righta = fadd double %tmp_30, %tmp_31
+
+ST_21: rightc (160)  [4/4] 9.18ns  loc: testproject/fun.h:115
+:64  %rightc = fadd double %tmp_36, %tmp_37
+
+ST_21: rightg (165)  [4/4] 9.18ns  loc: testproject/fun.h:117
+:69  %rightg = fadd double %tmp_41, %tmp_31
+
+ST_21: rightt (170)  [4/4] 9.18ns  loc: testproject/fun.h:119
+:74  %rightt = fadd double %tmp_44, %tmp_45
+
+
+ <State 22>: 9.18ns
+ST_22: lefta (125)  [3/4] 9.18ns  loc: testproject/fun.h:104
+:29  %lefta = fadd double %tmp_10, %tmp_11
+
+ST_22: leftc (132)  [3/4] 9.18ns  loc: testproject/fun.h:106
+:36  %leftc = fadd double %tmp_16, %tmp_17
+
+ST_22: leftg (137)  [3/4] 9.18ns  loc: testproject/fun.h:108
+:41  %leftg = fadd double %tmp_21, %tmp_11
+
+ST_22: leftt (142)  [3/4] 9.18ns  loc: testproject/fun.h:110
+:46  %leftt = fadd double %tmp_24, %tmp_25
+
+ST_22: righta (153)  [3/4] 9.18ns  loc: testproject/fun.h:113
+:57  %righta = fadd double %tmp_30, %tmp_31
+
+ST_22: rightc (160)  [3/4] 9.18ns  loc: testproject/fun.h:115
+:64  %rightc = fadd double %tmp_36, %tmp_37
+
+ST_22: rightg (165)  [3/4] 9.18ns  loc: testproject/fun.h:117
+:69  %rightg = fadd double %tmp_41, %tmp_31
+
+ST_22: rightt (170)  [3/4] 9.18ns  loc: testproject/fun.h:119
+:74  %rightt = fadd double %tmp_44, %tmp_45
+
+
+ <State 23>: 9.18ns
+ST_23: lefta (125)  [2/4] 9.18ns  loc: testproject/fun.h:104
+:29  %lefta = fadd double %tmp_10, %tmp_11
+
+ST_23: leftc (132)  [2/4] 9.18ns  loc: testproject/fun.h:106
+:36  %leftc = fadd double %tmp_16, %tmp_17
+
+ST_23: leftg (137)  [2/4] 9.18ns  loc: testproject/fun.h:108
+:41  %leftg = fadd double %tmp_21, %tmp_11
+
+ST_23: leftt (142)  [2/4] 9.18ns  loc: testproject/fun.h:110
+:46  %leftt = fadd double %tmp_24, %tmp_25
+
+ST_23: righta (153)  [2/4] 9.18ns  loc: testproject/fun.h:113
+:57  %righta = fadd double %tmp_30, %tmp_31
+
+ST_23: rightc (160)  [2/4] 9.18ns  loc: testproject/fun.h:115
+:64  %rightc = fadd double %tmp_36, %tmp_37
+
+ST_23: rightg (165)  [2/4] 9.18ns  loc: testproject/fun.h:117
+:69  %rightg = fadd double %tmp_41, %tmp_31
+
+ST_23: rightt (170)  [2/4] 9.18ns  loc: testproject/fun.h:119
+:74  %rightt = fadd double %tmp_44, %tmp_45
+
+
+ <State 24>: 9.18ns
+ST_24: lefta (125)  [1/4] 9.18ns  loc: testproject/fun.h:104
+:29  %lefta = fadd double %tmp_10, %tmp_11
+
+ST_24: leftc (132)  [1/4] 9.18ns  loc: testproject/fun.h:106
+:36  %leftc = fadd double %tmp_16, %tmp_17
+
+ST_24: leftg (137)  [1/4] 9.18ns  loc: testproject/fun.h:108
+:41  %leftg = fadd double %tmp_21, %tmp_11
+
+ST_24: leftt (142)  [1/4] 9.18ns  loc: testproject/fun.h:110
+:46  %leftt = fadd double %tmp_24, %tmp_25
+
+ST_24: righta (153)  [1/4] 9.18ns  loc: testproject/fun.h:113
+:57  %righta = fadd double %tmp_30, %tmp_31
+
+ST_24: rightc (160)  [1/4] 9.18ns  loc: testproject/fun.h:115
+:64  %rightc = fadd double %tmp_36, %tmp_37
+
+ST_24: rightg (165)  [1/4] 9.18ns  loc: testproject/fun.h:117
+:69  %rightg = fadd double %tmp_41, %tmp_31
+
+ST_24: rightt (170)  [1/4] 9.18ns  loc: testproject/fun.h:119
+:74  %rightt = fadd double %tmp_44, %tmp_45
+
+
+ <State 25>: 9.18ns
+ST_25: tmp_46 (171)  [4/4] 9.18ns  loc: testproject/fun.h:121
+:75  %tmp_46 = fadd double %lefta, %righta
+
+ST_25: tmp_47 (173)  [4/4] 9.18ns  loc: testproject/fun.h:122
+:77  %tmp_47 = fadd double %leftc, %rightc
+
+ST_25: tmp_48 (175)  [4/4] 9.18ns  loc: testproject/fun.h:123
+:79  %tmp_48 = fadd double %leftg, %rightg
+
+ST_25: tmp_49 (177)  [4/4] 9.18ns  loc: testproject/fun.h:124
+:81  %tmp_49 = fadd double %leftt, %rightt
+
+
+ <State 26>: 9.18ns
+ST_26: tmp_46 (171)  [3/4] 9.18ns  loc: testproject/fun.h:121
+:75  %tmp_46 = fadd double %lefta, %righta
+
+ST_26: tmp_47 (173)  [3/4] 9.18ns  loc: testproject/fun.h:122
+:77  %tmp_47 = fadd double %leftc, %rightc
+
+ST_26: tmp_48 (175)  [3/4] 9.18ns  loc: testproject/fun.h:123
+:79  %tmp_48 = fadd double %leftg, %rightg
+
+ST_26: tmp_49 (177)  [3/4] 9.18ns  loc: testproject/fun.h:124
+:81  %tmp_49 = fadd double %leftt, %rightt
+
+
+ <State 27>: 9.18ns
+ST_27: tmp_46 (171)  [2/4] 9.18ns  loc: testproject/fun.h:121
+:75  %tmp_46 = fadd double %lefta, %righta
+
+ST_27: tmp_47 (173)  [2/4] 9.18ns  loc: testproject/fun.h:122
+:77  %tmp_47 = fadd double %leftc, %rightc
+
+ST_27: tmp_48 (175)  [2/4] 9.18ns  loc: testproject/fun.h:123
+:79  %tmp_48 = fadd double %leftg, %rightg
+
+ST_27: tmp_49 (177)  [2/4] 9.18ns  loc: testproject/fun.h:124
+:81  %tmp_49 = fadd double %leftt, %rightt
+
+
+ <State 28>: 9.18ns
+ST_28: tmp_46 (171)  [1/4] 9.18ns  loc: testproject/fun.h:121
+:75  %tmp_46 = fadd double %lefta, %righta
+
+ST_28: tmp_47 (173)  [1/4] 9.18ns  loc: testproject/fun.h:122
+:77  %tmp_47 = fadd double %leftc, %rightc
+
+ST_28: tmp_48 (175)  [1/4] 9.18ns  loc: testproject/fun.h:123
+:79  %tmp_48 = fadd double %leftg, %rightg
+
+ST_28: tmp_49 (177)  [1/4] 9.18ns  loc: testproject/fun.h:124
+:81  %tmp_49 = fadd double %leftt, %rightt
+
+
+ <State 29>: 2.05ns
+ST_29: tmp_62_cast (104)  [1/1] 0.00ns  loc: testproject/fun.h:121
+:8  %tmp_62_cast = sext i8 %tmp_61 to i64
+
+ST_29: dataa_addr_2 (105)  [1/1] 0.00ns  loc: testproject/fun.h:121
+:9  %dataa_addr_2 = getelementptr [75 x double]* %dataa, i64 0, i64 %tmp_62_cast
+
+ST_29: datac_addr_2 (108)  [1/1] 0.00ns  loc: testproject/fun.h:122
+:12  %datac_addr_2 = getelementptr [75 x double]* %datac, i64 0, i64 %tmp_62_cast
+
+ST_29: datag_addr_2 (111)  [1/1] 0.00ns  loc: testproject/fun.h:123
+:15  %datag_addr_2 = getelementptr [75 x double]* %datag, i64 0, i64 %tmp_62_cast
+
+ST_29: datat_addr_2 (114)  [1/1] 0.00ns  loc: testproject/fun.h:124
+:18  %datat_addr_2 = getelementptr [75 x double]* %datat, i64 0, i64 %tmp_62_cast
+
+ST_29: StgValue_378 (172)  [1/1] 2.05ns  loc: testproject/fun.h:121
+:76  store double %tmp_46, double* %dataa_addr_2, align 8
+
+ST_29: StgValue_379 (174)  [1/1] 2.05ns  loc: testproject/fun.h:122
+:78  store double %tmp_47, double* %datac_addr_2, align 8
+
+ST_29: StgValue_380 (176)  [1/1] 2.05ns  loc: testproject/fun.h:123
+:80  store double %tmp_48, double* %datag_addr_2, align 8
+
+ST_29: StgValue_381 (178)  [1/1] 2.05ns  loc: testproject/fun.h:124
+:82  store double %tmp_49, double* %datat_addr_2, align 8
+
+ST_29: StgValue_382 (179)  [1/1] 0.00ns  loc: testproject/fun.h:102
+:83  br label %.preheader1
+
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 0.125ns.
+
+ <State 1>: 0.892ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('i') with incoming values : ('i', testproject/fun.h:65->testproject/fun.h:92) [19]  (0.892 ns)
+
+ <State 2>: 1.6ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', testproject/fun.h:65->testproject/fun.h:92) [19]  (0 ns)
+	'add' operation ('i', testproject/fun.h:65->testproject/fun.h:92) [21]  (1.6 ns)
+
+ <State 3>: 1.6ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', testproject/fun.h:76->testproject/fun.h:66->testproject/fun.h:92) [24]  (0 ns)
+	'add' operation ('i', testproject/fun.h:76->testproject/fun.h:66->testproject/fun.h:92) [27]  (1.6 ns)
+
+ <State 4>: 3.1ns
+The critical path consists of the following:
+	'phi' operation ('k') with incoming values : ('i', testproject/fun.h:65->testproject/fun.h:92) ('index', testproject/fun.h:95) [42]  (0 ns)
+	'add' operation ('index', testproject/fun.h:95) [43]  (1.6 ns)
+	'icmp' operation ('tmp', testproject/fun.h:96) [44]  (1.5 ns)
+
+ <State 5>: 2.49ns
+The critical path consists of the following:
+	'phi' operation ('result') with incoming values : ('result', testproject/fun.h:77->testproject/fun.h:97) [50]  (0 ns)
+	'add' operation ('left', testproject/fun.h:97) [59]  (1.6 ns)
+	multiplexor before 'phi' operation ('left') with incoming values : ('left', testproject/fun.h:97) ('left', testproject/fun.h:128) [62]  (0.892 ns)
+
+ <State 6>: 5.15ns
+The critical path consists of the following:
+	'phi' operation ('left') with incoming values : ('left', testproject/fun.h:97) ('left', testproject/fun.h:128) [62]  (0 ns)
+	'sub' operation ('p_neg', testproject/fun.h:120) [77]  (1.6 ns)
+	'sub' operation ('p_neg_t', testproject/fun.h:120) [80]  (1.6 ns)
+	'select' operation ('parent', testproject/fun.h:120) [83]  (0.71 ns)
+	'add' operation ('tmp_57', testproject/fun.h:121) [87]  (1.24 ns)
+
+ <State 7>: 3.29ns
+The critical path consists of the following:
+	'phi' operation ('y') with incoming values : ('y', testproject/fun.h:102) [90]  (0 ns)
+	'add' operation ('tmp_59', testproject/fun.h:104) [97]  (1.24 ns)
+	'getelementptr' operation ('dataa_addr', testproject/fun.h:104) [99]  (0 ns)
+	'load' operation ('dataa_load', testproject/fun.h:104) on array 'dataa' [115]  (2.05 ns)
+
+ <State 8>: 9.09ns
+The critical path consists of the following:
+	'load' operation ('dataa_load', testproject/fun.h:104) on array 'dataa' [115]  (2.05 ns)
+	'dmul' operation ('tmp_s', testproject/fun.h:104) [116]  (7.04 ns)
+
+ <State 9>: 7.04ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_s', testproject/fun.h:104) [116]  (7.04 ns)
+
+ <State 10>: 7.04ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_s', testproject/fun.h:104) [116]  (7.04 ns)
+
+ <State 11>: 7.04ns
+The critical path consists of the following:
+	'dmul' operation ('tmp_s', testproject/fun.h:104) [116]  (7.04 ns)
+
+ <State 12>: 9.09ns
+The critical path consists of the following:
+	'load' operation ('datag_load', testproject/fun.h:104) on array 'datag' [120]  (2.05 ns)
+	'dmul' operation ('tmp_7', testproject/fun.h:104) [121]  (7.04 ns)
+
+ <State 13>: 9.18ns
+The critical path consists of the following:
+	'dadd' operation ('tmp_5', testproject/fun.h:104) [119]  (9.18 ns)
+
+ <State 14>: 9.18ns
+The critical path consists of the following:
+	'dadd' operation ('tmp_5', testproject/fun.h:104) [119]  (9.18 ns)
+
+ <State 15>: 9.18ns
+The critical path consists of the following:
+	'dadd' operation ('tmp_5', testproject/fun.h:104) [119]  (9.18 ns)
+
+ <State 16>: 9.18ns
+The critical path consists of the following:
+	'dadd' operation ('tmp_5', testproject/fun.h:104) [119]  (9.18 ns)
+
+ <State 17>: 9.18ns
+The critical path consists of the following:
+	'dadd' operation ('tmp_10', testproject/fun.h:104) [122]  (9.18 ns)
+
+ <State 18>: 9.18ns
+The critical path consists of the following:
+	'dadd' operation ('tmp_10', testproject/fun.h:104) [122]  (9.18 ns)
+
+ <State 19>: 9.18ns
+The critical path consists of the following:
+	'dadd' operation ('tmp_10', testproject/fun.h:104) [122]  (9.18 ns)
+
+ <State 20>: 9.18ns
+The critical path consists of the following:
+	'dadd' operation ('tmp_10', testproject/fun.h:104) [122]  (9.18 ns)
+
+ <State 21>: 9.18ns
+The critical path consists of the following:
+	'dadd' operation ('lefta', testproject/fun.h:104) [125]  (9.18 ns)
+
+ <State 22>: 9.18ns
+The critical path consists of the following:
+	'dadd' operation ('lefta', testproject/fun.h:104) [125]  (9.18 ns)
+
+ <State 23>: 9.18ns
+The critical path consists of the following:
+	'dadd' operation ('lefta', testproject/fun.h:104) [125]  (9.18 ns)
+
+ <State 24>: 9.18ns
+The critical path consists of the following:
+	'dadd' operation ('lefta', testproject/fun.h:104) [125]  (9.18 ns)
+
+ <State 25>: 9.18ns
+The critical path consists of the following:
+	'dadd' operation ('tmp_46', testproject/fun.h:121) [171]  (9.18 ns)
+
+ <State 26>: 9.18ns
+The critical path consists of the following:
+	'dadd' operation ('tmp_46', testproject/fun.h:121) [171]  (9.18 ns)
+
+ <State 27>: 9.18ns
+The critical path consists of the following:
+	'dadd' operation ('tmp_46', testproject/fun.h:121) [171]  (9.18 ns)
+
+ <State 28>: 9.18ns
+The critical path consists of the following:
+	'dadd' operation ('tmp_46', testproject/fun.h:121) [171]  (9.18 ns)
+
+ <State 29>: 2.05ns
+The critical path consists of the following:
+	'getelementptr' operation ('dataa_addr_2', testproject/fun.h:121) [105]  (0 ns)
+	'store' operation (testproject/fun.h:121) of variable 'tmp_46', testproject/fun.h:121 on array 'dataa' [172]  (2.05 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

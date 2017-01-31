@@ -1,0 +1,3 @@
+compute_dadd_64nsbkb
+compute_dmul_64nscud
+compute

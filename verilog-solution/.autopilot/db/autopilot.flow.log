@@ -1,0 +1,168 @@
+@I [HLS-0] Workspace /home/rika/eceproject/hequ2/FPGAs-for-Accelerating-the-Phylogenetic-Likelihood-Function/verilog-solution opened at Mon Jan 30 22:59:21 CST 2017
+@I [HLS-100] Execute     config_clock -quiet -name default -period 10 -default=false 
+@I [SYN-201] Setting up clock 'default' with a period of 10ns.
+@I [HLS-100] Command     config_clock returned 0; 0 sec.
+@I [HLS-100] Execute     config_clock -quiet -name default -uncertainty 0.125 
+@I [SYN-201] Setting up clock 'default' with an uncertainty of 0.125ns.
+@I [HLS-100] Command     config_clock returned 0; 0 sec.
+@I [HLS-100] Execute     open_platform DefaultPlatform 
+@I [HLS-100] Command     open_platform returned 0; 0 sec.
+@I [HLS-100] Execute     import_lib /home/rika/Vivado_HLS/2016.3/common/technology/xilinx/kintex7/kintex7 
+@I [HLS-100] Execute       source /home/rika/Vivado_HLS/2016.3/common/technology/xilinx/common/xilinx.lib 
+@I [HLS-100] Execute         source /home/rika/Vivado_HLS/2016.3/common/technology/xilinx/interface/xilinx_interface.lib 
+@I [HLS-100] Execute           source /home/rika/Vivado_HLS/2016.3/common/technology/xilinx/interface/plb46.lib 
+@I [HLS-100] Command           ap_source returned 0; 0 sec.
+@I [HLS-100] Execute           source /home/rika/Vivado_HLS/2016.3/common/technology/xilinx/interface/fsl.lib 
+@I [HLS-100] Command           ap_source returned 0; 0 sec.
+@I [HLS-100] Execute           source /home/rika/Vivado_HLS/2016.3/common/technology/xilinx/interface/axi4.lib 
+@I [HLS-100] Command           ap_source returned 0; 0 sec.
+@I [HLS-100] Execute           source /home/rika/Vivado_HLS/2016.3/common/technology/xilinx/interface/maxi.lib 
+@I [HLS-100] Command           ap_source returned 0; 0 sec.
+@I [HLS-100] Execute           source /home/rika/Vivado_HLS/2016.3/common/technology/xilinx/interface/saxilite.lib 
+@I [HLS-100] Command           ap_source returned 0; 0 sec.
+@I [HLS-100] Command         ap_source returned 0; 0 sec.
+@I [HLS-100] Execute         source /home/rika/Vivado_HLS/2016.3/common/technology/xilinx/common/dsp48.lib 
+@I [HLS-100] Command         ap_source returned 0; 0 sec.
+@I [HLS-100] Execute         source /home/rika/Vivado_HLS/2016.3/common/technology/xilinx/ip/dds_compiler.lib 
+@I [HLS-100] Command         ap_source returned 0; 0 sec.
+@I [HLS-100] Execute         source /home/rika/Vivado_HLS/2016.3/common/technology/xilinx/ip/xfft.lib 
+@I [HLS-100] Command         ap_source returned 0; 0 sec.
+@I [HLS-100] Execute         source /home/rika/Vivado_HLS/2016.3/common/technology/xilinx/ip/xfir.lib 
+@I [HLS-100] Command         ap_source returned 0; 0 sec.
+@I [HLS-100] Command       ap_source returned 0; 0 sec.
+@I [HLS-100] Execute       source /home/rika/Vivado_HLS/2016.3/common/technology/xilinx/common/xilinx_old.lib 
+@I [HLS-100] Command       ap_source returned 0; 0.01 sec.
+@I [HLS-100] Execute       source /home/rika/Vivado_HLS/2016.3/common/technology/xilinx/common/xilinx_vivado.lib 
+@I [HLS-100] Command       ap_source returned 0; 0 sec.
+@I [HLS-100] Execute       source /home/rika/Vivado_HLS/2016.3/common/technology/xilinx/common/xilinx.hlp 
+@I [HLS-100] Execute         source /home/rika/Vivado_HLS/2016.3/common/technology/xilinx/common/target_info.tcl 
+@I [HLS-100] Command         ap_source returned 0; 0 sec.
+@I [HLS-100] Execute         source /home/rika/Vivado_HLS/2016.3/common/technology/xilinx/interface/xilinx_interface.hlp 
+@I [HLS-100] Execute           source /home/rika/Vivado_HLS/2016.3/common/technology/xilinx/interface/maxi.hlp 
+@I [HLS-100] Command           ap_source returned 0; 0 sec.
+@I [HLS-100] Execute           source /home/rika/Vivado_HLS/2016.3/common/technology/xilinx/interface/saxilite.hlp 
+@I [HLS-100] Command           ap_source returned 0; 0 sec.
+@I [HLS-100] Command         ap_source returned 0; 0 sec.
+@I [HLS-100] Execute         source /home/rika/Vivado_HLS/2016.3/common/technology/xilinx/common/dsp48.hlp 
+@I [HLS-100] Command         ap_source returned 0; 0 sec.
+@I [HLS-100] Command       ap_source returned 0; 0 sec.
+@I [HLS-100] Execute       source /home/rika/Vivado_HLS/2016.3/common/technology/xilinx/kintex7/dsp48e1.hlp 
+@I [HLS-100] Command       ap_source returned 0; 0 sec.
+@I [HLS-100] Execute       get_default_platform 
+@I [HLS-100] Command       get_default_platform returned 0; 0 sec.
+@I [HLS-100] Execute       config_chip_info -quiet -resource  {SLICE 50950} {LUT 203800}    {FF 407600} {DSP48E 840}    {BRAM 890}  
+@I [HLS-100] Command       config_chip_info returned 0; 0 sec.
+@I [HLS-100] Execute       config_chip_info -quiet -speed medium 
+@I [HLS-100] Command       config_chip_info returned 0; 0 sec.
+@I [HLS-100] Command     import_lib returned 0; 0.01 sec.
+@I [HLS-100] Execute     source /home/rika/Vivado_HLS/2016.3/common/technology/xilinx/kintex7/kintex7.gen 
+@I [HLS-100] Execute       source /home/rika/Vivado_HLS/2016.3/common/technology/xilinx/common/virtex.gen 
+@I [HLS-100] Execute         source /home/rika/Vivado_HLS/2016.3/common/technology/xilinx/common/xilinx.gen 
+@I [HLS-100] Execute           source /home/rika/Vivado_HLS/2016.3/common/technology/xilinx/interface/plb46.gen 
+@I [HLS-100] Command           ap_source returned 0; 0 sec.
+@I [HLS-100] Execute           source /home/rika/Vivado_HLS/2016.3/common/technology/xilinx/interface/fsl.gen 
+@I [HLS-100] Command           ap_source returned 0; 0 sec.
+@I [HLS-100] Execute           source /home/rika/Vivado_HLS/2016.3/common/technology/xilinx/interface/axi4.gen 
+@I [HLS-100] Command           ap_source returned 0; 0 sec.
+@I [HLS-100] Execute           source /home/rika/Vivado_HLS/2016.3/common/technology/xilinx/interface/nativeAXI4.gen 
+@I [HLS-100] Execute             source /home/rika/Vivado_HLS/2016.3/common/technology/xilinx/interface/saxilite.gen 
+@I [HLS-100] Command             ap_source returned 0; 0 sec.
+@I [HLS-100] Execute             source /home/rika/Vivado_HLS/2016.3/common/technology/xilinx/interface/maxi.gen 
+@I [HLS-100] Command             ap_source returned 0; 0.01 sec.
+@I [HLS-100] Command           ap_source returned 0; 0.01 sec.
+@I [HLS-100] Execute           source /home/rika/Vivado_HLS/2016.3/common/technology/xilinx/scripts/xilinxcoregen.gen 
+@I [HLS-100] Command           ap_source returned 0; 0.01 sec.
+@I [HLS-100] Execute           source /home/rika/Vivado_HLS/2016.3/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+@I [HLS-100] Command           ap_source returned 0; 0 sec.
+@I [HLS-100] Execute           source /home/rika/Vivado_HLS/2016.3/common/technology/xilinx/ip/util.gen 
+@I [HLS-100] Command           ap_source returned 0; 0 sec.
+@I [HLS-100] Execute           source /home/rika/Vivado_HLS/2016.3/common/technology/xilinx/ip/dds_compiler.gen 
+@I [HLS-100] Command           ap_source returned 0; 0.01 sec.
+@I [HLS-100] Execute           source /home/rika/Vivado_HLS/2016.3/common/technology/xilinx/ip/xfir.gen 
+@I [HLS-100] Command           ap_source returned 0; 0 sec.
+@I [HLS-100] Execute           source /home/rika/Vivado_HLS/2016.3/common/technology/xilinx/ip/xfft.gen 
+@I [HLS-100] Command           ap_source returned 0; 0.08 sec.
+@I [HLS-100] Command         ap_source returned 0; 0.11 sec.
+@I [HLS-100] Execute         source /home/rika/Vivado_HLS/2016.3/common/technology/xilinx/common/dsp48.gen 
+@I [HLS-100] Command         ap_source returned 0; 0 sec.
+@I [HLS-100] Command       ap_source returned 0; 0.11 sec.
+@I [HLS-100] Command     ap_source returned 0; 0.12 sec.
+@I [HLS-100] Execute     open_platform DefaultPlatform 
+@I [HLS-100] Command     open_platform returned 0; 0 sec.
+@I [HLS-100] Execute     import_lib /home/rika/Vivado_HLS/2016.3/common/technology/xilinx/kintex7/kintex7_fpv6 
+@I [HLS-100] Execute       source /home/rika/Vivado_HLS/2016.3/common/technology/xilinx/common/xilinx_fpv7.lib 
+@I [HLS-100] Execute         source /home/rika/Vivado_HLS/2016.3/common/technology/xilinx/common/xilinx_hp.lib 
+@I [HLS-100] Command         ap_source returned 0; 0.01 sec.
+@I [HLS-100] Command       ap_source returned 0; 0.01 sec.
+@I [HLS-100] Execute       source /home/rika/Vivado_HLS/2016.3/common/technology/xilinx/common/xilinx_fpv.hlp 
+@I [HLS-100] Execute         source /home/rika/Vivado_HLS/2016.3/common/technology/xilinx/common/xilinx.hlp 
+@I [HLS-100] Execute           source /home/rika/Vivado_HLS/2016.3/common/technology/xilinx/common/target_info.tcl 
+@I [HLS-100] Command           ap_source returned 0; 0 sec.
+@I [HLS-100] Execute           source /home/rika/Vivado_HLS/2016.3/common/technology/xilinx/interface/xilinx_interface.hlp 
+@I [HLS-100] Execute             source /home/rika/Vivado_HLS/2016.3/common/technology/xilinx/interface/maxi.hlp 
+@I [HLS-100] Command             ap_source returned 0; 0 sec.
+@I [HLS-100] Execute             source /home/rika/Vivado_HLS/2016.3/common/technology/xilinx/interface/saxilite.hlp 
+@I [HLS-100] Command             ap_source returned 0; 0 sec.
+@I [HLS-100] Command           ap_source returned 0; 0 sec.
+@I [HLS-100] Execute           source /home/rika/Vivado_HLS/2016.3/common/technology/xilinx/common/dsp48.hlp 
+@I [HLS-100] Command           ap_source returned 0; 0 sec.
+@I [HLS-100] Command         ap_source returned 0; 0.01 sec.
+@I [HLS-100] Command       ap_source returned 0; 0.01 sec.
+@I [HLS-100] Execute       source /home/rika/Vivado_HLS/2016.3/common/technology/xilinx/kintex7/kintex7_hp.hlp 
+@I [HLS-100] Command       ap_source returned 0; 0 sec.
+@I [HLS-100] Command     import_lib returned 0; 0.02 sec.
+@I [HLS-100] Execute     source /home/rika/Vivado_HLS/2016.3/common/technology/xilinx/kintex7/kintex7_fpv6.gen 
+@I [HLS-100] Execute       source /home/rika/Vivado_HLS/2016.3/common/technology/xilinx/common/xilinx_fpv6.gen 
+@I [HLS-100] Command       ap_source returned 0; 0 sec.
+@I [HLS-100] Command     ap_source returned 0; 0 sec.
+@I [HLS-100] Execute     set_part xc7k160tfbg484-2 
+@I [HLS-100] Execute       add_library xilinx/kintex7/kintex7:xc7k160t:fbg484:-2 
+@I [HLS-100] Execute         get_default_platform 
+@I [HLS-100] Command         get_default_platform returned 0; 0 sec.
+@I [HLS-100] Execute         license_isbetapart xc7k160t 
+@I [HLS-100] Command         license_isbetapart returned 1; 0 sec.
+@I [HLS-100] Execute         get_default_platform 
+@I [HLS-100] Command         get_default_platform returned 0; 0 sec.
+@I [HLS-100] Execute         config_chip_info -quiet -resource  {SLICE 25350} {LUT 101400}    {FF 202800} {DSP48E 600}    {BRAM 650}  
+@I [HLS-100] Command         config_chip_info returned 0; 0 sec.
+@I [HLS-100] Execute         config_chip_info -quiet -speed medium 
+@I [HLS-100] Command         config_chip_info returned 0; 0 sec.
+@I [HLS-100] Command       add_library returned 0; 0 sec.
+@I [HLS-100] Execute       add_library xilinx/kintex7/kintex7_fpv6 
+@I [HLS-100] Execute         get_default_platform 
+@I [HLS-100] Command         get_default_platform returned 0; 0 sec.
+@I [HLS-100] Command       add_library returned 0; 0 sec.
+@I [HLS-10] Setting target device to 'xc7k160tfbg484-2'
+@I [HLS-100] Command     set_part returned 0; 0.02 sec.
+@I [HLS-100] Execute     get_default_platform 
+@I [HLS-100] Command     get_default_platform returned 0; 0 sec.
+@I [HLS-100] Execute     config_chip_info -quiet -resource  {SLICE 25350} {LUT 101400}    {FF 202800} {DSP48E 600}    {BRAM 650}  
+@I [HLS-100] Command     config_chip_info returned 0; 0 sec.
+@I [HLS-100] Execute     config_chip_info -quiet -speed medium 
+@I [HLS-100] Command     config_chip_info returned 0; 0 sec.
+@I [HLS-100] Command   open_solution returned 0; 0.18 sec.
+@I [HLS-100] Execute   csim_design -compiler gcc -quiet 
+@I [HLS-100] Execute     source /home/rika/eceproject/hequ2/FPGAs-for-Accelerating-the-Phylogenetic-Likelihood-Function/verilog-solution/.autopilot/db/global.setting.tcl 
+@I [HLS-100] Command     ap_source returned 0; 0 sec.
+@I [SIM-2] *************** CSIM start ***************
+@I [SIM-4] CSIM will launch GCC as the compiler.
+@I [HLS-100] Execute     is_encrypted /home/rika/eceproject/hequ2/testproject/data5.txt 
+@I [HLS-100] Command     is_encrypted returned 0; 0 sec.
+@I [HLS-100] Execute     is_xip /home/rika/eceproject/hequ2/testproject/data5.txt 
+@I [HLS-100] Command     is_xip returned 0; 0 sec.
+@I [HLS-100] Execute     is_encrypted /home/rika/eceproject/hequ2/testproject/test.c 
+@I [HLS-100] Command     is_encrypted returned 0; 0 sec.
+@I [HLS-100] Execute     is_xip /home/rika/eceproject/hequ2/testproject/test.c 
+@I [HLS-100] Command     is_xip returned 0; 0 sec.
+@I [HLS-100] Execute     is_encrypted /home/rika/eceproject/hequ2/testproject/fun.h 
+@I [HLS-100] Command     is_encrypted returned 0; 0 sec.
+@I [HLS-100] Execute     is_xip /home/rika/eceproject/hequ2/testproject/fun.h 
+@I [HLS-100] Command     is_xip returned 0; 0 sec.
+@I [HLS-100] Execute     source run_sim.tcl 
+@I [HLS-100] Command     ap_source returned 0; 0.01 sec.
+@I [SIM-1] CSim done with 0 errors.
+@I [SIM-3] *************** CSIM finish ***************
+@I [HLS-100] Command   csim_design returned 0; 1.67 sec.
+@I [HLS-100] Command ap_source returned 0; 1.85 sec.
+@I [HLS-100] Execute cleanup_all 
+@I [HLS-100] Command cleanup_all returned 0; 0 sec.

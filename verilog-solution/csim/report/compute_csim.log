@@ -1,0 +1,29 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling(apcc) ../../../../testproject/test.c in debug mode
+INFO: [HLS 200-10] Running '/home/rika/Vivado_HLS/2016.3/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'rika' on host 'rika-ThinkPad-T450s' (Linux_x86_64 version 4.8.0-34-generic) on Mon Jan 30 22:59:22 CST 2017
+INFO: [HLS 200-10] On os Ubuntu 16.10
+INFO: [HLS 200-10] In directory '/home/rika/eceproject/hequ2/FPGAs-for-Accelerating-the-Phylogenetic-Likelihood-Function/verilog-solution/csim/build'
+In file included from ../../../../testproject/test.c:1:
+../../../../testproject/fun.h:174:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+In file included from ../../../../testproject/test.c:1:
+../../../../testproject/fun.h:174:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_rika/318221485838762540058
+INFO: [APCC 202-1] APCC is done.
+   Generating csim.exe
+result: 15.214636
+virtual root:
+A: 5.170058 4.984677 5.221012 5.355438 5.391060 
+C: 5.248530 5.277618 5.170064 5.219442 5.418579 
+G: 5.170052 4.986224 5.217902 5.353880 5.387951 
+T: 5.234175 5.256089 5.170057 5.212262 5.404224 
+Results are good 
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************
